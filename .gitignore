@@ -1,0 +1,4 @@
+node_modules/
+data/films/
+.DS_Store
+*.log

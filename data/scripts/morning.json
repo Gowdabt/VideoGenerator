@@ -1,0 +1,37 @@
+{
+  "id": "morning",
+  "title": "Morning Walk",
+  "fps": 12,
+  "width": 1280,
+  "height": 720,
+  "scenes": [
+    {
+      "backgroundId": "park",
+      "lines": [
+        {
+          "characterId": "mira",
+          "action": "wave",
+          "camera": "wide",
+          "text": "Good morning."
+        },
+        {
+          "characterId": "dev",
+          "action": "walk",
+          "camera": "follow",
+          "text": "Let's walk."
+        }
+      ]
+    },
+    {
+      "backgroundId": "street",
+      "lines": [
+        {
+          "characterId": "mira",
+          "action": "talk",
+          "camera": "close",
+          "text": "The street is lit."
+        }
+      ]
+    }
+  ]
+}

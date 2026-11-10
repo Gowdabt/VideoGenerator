@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Video Generator</title>
+  <link rel="stylesheet" href="/studio.css">
+</head>
+<body>
+  <header>
+    <div>
+      <p class="eyebrow">Local studio · no Claude</p>
+      <h1>Video Generator</h1>
+    </div>
+    <p id="tool-status">Checking ffmpeg and Chrome…</p>
+  </header>
+
+  <section class="how">
+    <h2>How to use it</h2>
+    <ol>
+      <li><strong>Build the library once.</strong> Characters, components (trees, lamps, houses), and backgrounds stay saved. Every later film reuses them.</li>
+      <li><strong>Write a script.</strong> Each scene picks a background. Each line picks a character, an action, a camera, and the words they say.</li>
+      <li><strong>Generate.</strong> That run only rebuilds the voice and <code>scene.js</code> for this script. The Three.js rig and the library are left alone.</li>
+      <li><strong>Render</strong> walks the scene frame by frame in Chrome and muxes the voice into an mp4.</li>
+    </ol>
+  </section>
+
+  <main>
+    <section class="panel" id="library-panel">
+      <div class="panel-head">
+        <h2>Library</h2>
+        <button id="save-library" type="button">Save library</button>
+      </div>
+      <div id="library"></div>
+    </section>
+
+    <section class="panel" id="script-panel">
+      <div class="panel-head">
+        <h2>Script</h2>
+        <div class="row">
+          <select id="script-picker"></select>
+          <button id="new-script" type="button">New script</button>
+          <button id="save-script" type="button">Save script</button>
+        </div>
+      </div>
+      <div id="script"></div>
+      <div class="actions">
+        <button id="generate" type="button">Generate voice and code</button>
+        <button id="render" class="primary" type="button">Render video</button>
+      </div>
+      <iframe id="preview" title="Film preview"></iframe>
+      <p id="log"></p>
+      <video id="player" controls hidden></video>
+    </section>
+  </main>
+  <script type="module" src="/studio.js"></script>
+</body>
+</html>
